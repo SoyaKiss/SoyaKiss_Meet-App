@@ -1,0 +1,41 @@
+{
+  "name": "meet_app",
+  "version": "1.0.0",
+  "description": "<h2>Project Name: Event Planner PWA (Meet_App)</h2> <h3>Objective: </h3> <p>Develop a serverless, progressive web application (PWA) with React using a test-driven development (TDD) approach, integrating the Google Calendar API to fetch upcoming events.</p> <br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "jest": "^29.7.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
+    "@testing-library/jest-dom": "^6.4.8",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
+    },
+    "testEnvironment": "jest-environment-jsdom"
+  }
+}
