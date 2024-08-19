@@ -39,14 +39,26 @@ export const getAccessToken = async () => {
   if (!accessToken || tokenCheck.error) {
     await localStorage.removeItem("access_token");
     const searchParams = new URLSearchParams(window.location.search);
-    const code = await searchParams.get("code");
+    const code = searchParams.get("code");
     if (!code) {
       const response = await fetch(
         "https://rkvz72ff68.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
       );
       const result = await response.json();
       const { authUrl } = result;
-      return (window.location.href = authUrl);
+
+      // Make sure the redirect URI used here matches the one in Google Cloud Console
+      const redirectUri = "https://soyakiss.github.io/meet_app/";
+
+      // Check if the authUrl already includes 'redirect_uri'
+      if (authUrl.includes("redirect_uri")) {
+        window.location.href = authUrl; // No need to add redirect_uri again
+      } else {
+        window.location.href = `${authUrl}&redirect_uri=${encodeURIComponent(
+          redirectUri
+        )}`;
+      }
+      return;
     }
     return code && getToken(code);
   }
