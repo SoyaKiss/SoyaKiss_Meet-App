@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const CitySearch = ({ allLocations }) => {
+const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -21,7 +21,12 @@ const CitySearch = ({ allLocations }) => {
     const value = event.target.textContent;
     setQuery(value);
     setShowSuggestions(false);
+    setCurrentCity(value); // Use the setCurrentCity function passed as a prop
   };
+
+  useEffect(() => {
+    setSuggestions(allLocations);
+  }, [allLocations]);
 
   return (
     <div id="city-search">

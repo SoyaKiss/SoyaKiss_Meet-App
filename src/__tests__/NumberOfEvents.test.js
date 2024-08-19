@@ -31,6 +31,6 @@ describe("<NumberOfEvents /> component", () => {
 
     await user.type(inputElement, "{backspace}{backspace}10");
     expect(inputElement).toHaveValue(10);
-    expect(mockUpdateEventCount).toHaveBeenCalledWith("10");
+    expect(mockUpdateEventCount).toHaveBeenCalledWith(10); // Ensure it's a number, not a string
   });
 });

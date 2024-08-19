@@ -4,7 +4,11 @@
   "description": "<h2>Project Name: Event Planner PWA (Meet_App)</h2> <h3>Objective: </h3> <p>Develop a serverless, progressive web application (PWA) with React using a test-driven development (TDD) approach, integrating the Google Calendar API to fetch upcoming events.</p> <br>",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -13,12 +17,15 @@
     "@testing-library/user-event": "^14.5.2",
     "jest": "^29.7.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^4.2.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-react": "^7.24.7",
     "@testing-library/jest-dom": "^6.4.8",
+    "gh-pages": "^6.1.1",
     "jest-environment-jsdom": "^29.7.0"
   },
   "babel": {
@@ -37,5 +44,18 @@
       "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
     },
     "testEnvironment": "jest-environment-jsdom"
-  }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "https://soyakiss.github.io/meet_app/"
 }

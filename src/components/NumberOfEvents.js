@@ -4,7 +4,7 @@ const NumberOfEvents = ({ updateEventCount }) => {
   const [eventCount, setEventCount] = useState(32);
 
   const handleInputChanged = (event) => {
-    const value = event.target.value;
+    const value = parseInt(event.target.value, 10); // Ensure it’s a number
     setEventCount(value);
     updateEventCount(value);
   };
