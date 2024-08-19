@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import NumberOfEvents from "../components/NumberOfEvents";
 
@@ -29,8 +29,11 @@ describe("<NumberOfEvents /> component", () => {
       name: /number of events/i,
     });
 
-    await user.type(inputElement, "{backspace}{backspace}10");
+    await act(async () => {
+      await user.type(inputElement, "{backspace}{backspace}10");
+    });
+
     expect(inputElement).toHaveValue(10);
-    expect(mockUpdateEventCount).toHaveBeenCalledWith(10); // Ensure it's a number, not a string
+    expect(mockUpdateEventCount).toHaveBeenCalledWith(10);
   });
 });
