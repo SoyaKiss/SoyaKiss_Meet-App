@@ -1,0 +1,20 @@
+:root {
+  --darkGreen: #264653;
+  --turquoise: #2a9d8e;
+  --saffron: #e9c46b;
+  --lightOrange: #f3a261;
+  --darkOrange: #e66f51;
+}
+
+header {
+  background-color: var(--darkGreen);
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}

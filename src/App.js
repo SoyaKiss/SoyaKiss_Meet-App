@@ -3,7 +3,8 @@ import CitySearch from "./components/CitySearch";
 import EventList from "./components/EventList";
 import NumberOfEvents from "./components/NumberOfEvents";
 import { extractLocations, getEvents } from "./api";
-import "./App.css";
+import Header from "./components/Header";
+import "./styles/App.css";
 
 const App = () => {
   const [events, setEvents] = useState([]);
@@ -13,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     fetchData();
-  }, [currentCity]);
+  }, [currentCity, currentNOE]); // <--- Two dependencies
 
   const fetchData = async () => {
     const allEvents = await getEvents();
@@ -21,12 +22,14 @@ const App = () => {
       currentCity === "See all cities"
         ? allEvents
         : allEvents.filter((event) => event.location === currentCity);
+    console.log("Filtered Events:", filteredEvents); // Log the filtered events
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
   };
 
   return (
     <div className="App">
+      <Header /> {/* Add the Header component here */}
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
       <NumberOfEvents updateEventCount={setCurrentNOE} />
       <EventList events={events} />

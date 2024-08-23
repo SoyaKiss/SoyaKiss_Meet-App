@@ -1436,6 +1436,211 @@ const mockData = [
     },
     eventType: "default",
   },
+  {
+    kind: "calendar#event",
+    etag: '"3181161784712000"',
+    id: "4eahs9ghkhrvkld72hogu9ph3e_20200628T140000Z",
+    status: "confirmed",
+    htmlLink:
+      "https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA2MjhUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    created: "2020-05-19T19:17:46.000Z",
+    updated: "2020-05-27T12:01:32.356Z",
+    summary: "Advanced React Workshop",
+    description:
+      "Join us for an advanced workshop on React, where we delve deeper into hooks, context, and state management. Perfect for those with some React experience looking to take their skills to the next level.",
+    location: "New York, USA",
+    creator: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    organizer: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    start: {
+      dateTime: "2020-06-28T16:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    end: {
+      dateTime: "2020-06-28T17:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    recurringEventId: "4eahs9ghkhrvkld72hogu9ph3e",
+    originalStartTime: {
+      dateTime: "2020-06-28T16:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    iCalUID: "4eahs9ghkhrvkld72hogu9ph3e@google.com",
+    sequence: 0,
+    reminders: {
+      useDefault: true,
+    },
+    eventType: "default",
+  },
+  {
+    kind: "calendar#event",
+    etag: '"3181159875584000"',
+    id: "3qtd6uscq4tsi6gc7nmmtpqlct_20200701T120000Z",
+    status: "confirmed",
+    htmlLink:
+      "https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA3MDFUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    created: "2020-05-19T19:14:30.000Z",
+    updated: "2020-05-27T11:45:37.792Z",
+    summary: "Vue.js Introduction",
+    description:
+      "New to front-end frameworks? Join our introductory session on Vue.js, where you'll learn the basics and get hands-on experience building a simple app.",
+    location: "Tokyo, Japan",
+    creator: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    organizer: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    start: {
+      dateTime: "2020-07-01T14:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    end: {
+      dateTime: "2020-07-01T15:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    recurringEventId: "3qtd6uscq4tsi6gc7nmmtpqlct",
+    originalStartTime: {
+      dateTime: "2020-07-01T14:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    iCalUID: "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",
+    sequence: 0,
+    reminders: {
+      useDefault: true,
+    },
+    eventType: "default",
+  },
+  {
+    kind: "calendar#event",
+    etag: '"3181161784712000"',
+    id: "4eahs9ghkhrvkld72hogu9ph3e_20200703T140000Z",
+    status: "confirmed",
+    htmlLink:
+      "https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA3MDNUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    created: "2020-05-19T19:17:46.000Z",
+    updated: "2020-05-27T12:01:32.356Z",
+    summary: "Building Web Apps with Angular",
+    description:
+      "Explore the world of Angular in this intensive workshop. Learn how to build scalable web applications and understand the framework's powerful features.",
+    location: "Sydney, Australia",
+    creator: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    organizer: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    start: {
+      dateTime: "2020-07-03T16:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    end: {
+      dateTime: "2020-07-03T17:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    recurringEventId: "4eahs9ghkhrvkld72hogu9ph3e",
+    originalStartTime: {
+      dateTime: "2020-07-03T16:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    iCalUID: "4eahs9ghkhrvkld72hogu9ph3e@google.com",
+    sequence: 0,
+    reminders: {
+      useDefault: true,
+    },
+    eventType: "default",
+  },
+  {
+    kind: "calendar#event",
+    etag: '"3181159875584000"',
+    id: "3qtd6uscq4tsi6gc7nmmtpqlct_20200705T120000Z",
+    status: "confirmed",
+    htmlLink:
+      "https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA3MDVUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    created: "2020-05-19T19:14:30.000Z",
+    updated: "2020-05-27T11:45:37.792Z",
+    summary: "Full Stack Development Bootcamp",
+    description:
+      "Enroll in our Full Stack Development Bootcamp, where you'll learn the fundamentals of both front-end and back-end development using popular technologies.",
+    location: "Toronto, Canada",
+    creator: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    organizer: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    start: {
+      dateTime: "2020-07-05T14:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    end: {
+      dateTime: "2020-07-05T15:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    recurringEventId: "3qtd6uscq4tsi6gc7nmmtpqlct",
+    originalStartTime: {
+      dateTime: "2020-07-05T14:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    iCalUID: "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",
+    sequence: 0,
+    reminders: {
+      useDefault: true,
+    },
+    eventType: "default",
+  },
+  {
+    kind: "calendar#event",
+    etag: '"3181161784712000"',
+    id: "4eahs9ghkhrvkld72hogu9ph3e_20200707T140000Z",
+    status: "confirmed",
+    htmlLink:
+      "https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA3MDdUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    created: "2020-05-19T19:17:46.000Z",
+    updated: "2020-05-27T12:01:32.356Z",
+    summary: "Node.js API Development",
+    description:
+      "Master back-end development with Node.js in this comprehensive course. Learn how to build fast and scalable APIs for modern web applications.",
+    location: "San Francisco, USA",
+    creator: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    organizer: {
+      email: "fullstackwebdev@careerfoundry.com",
+      self: true,
+    },
+    start: {
+      dateTime: "2020-07-07T16:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    end: {
+      dateTime: "2020-07-07T17:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    recurringEventId: "4eahs9ghkhrvkld72hogu9ph3e",
+    originalStartTime: {
+      dateTime: "2020-07-07T16:00:00+02:00",
+      timeZone: "Europe/Berlin",
+    },
+    iCalUID: "4eahs9ghkhrvkld72hogu9ph3e@google.com",
+    sequence: 0,
+    reminders: {
+      useDefault: true,
+    },
+    eventType: "default",
+  },
 ];
 
 export default mockData;

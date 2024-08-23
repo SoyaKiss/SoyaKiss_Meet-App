@@ -5,8 +5,8 @@ const NumberOfEvents = ({ updateEventCount }) => {
 
   const handleInputChanged = (event) => {
     let value = parseInt(event.target.value, 10);
-    if (isNaN(value)) {
-      value = 0; // Default to 0 if the value isn't a valid number
+    if (isNaN(value) || value < 0) {
+      value = 0; // Default to 0 if the value isn't a valid number or if it's negative
     }
     setEventCount(value);
     updateEventCount(value);

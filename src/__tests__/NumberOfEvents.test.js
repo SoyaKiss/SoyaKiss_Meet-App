@@ -36,4 +36,35 @@ describe("<NumberOfEvents /> component", () => {
     expect(inputElement).toHaveValue(10);
     expect(mockUpdateEventCount).toHaveBeenCalledWith(10);
   });
+  test("input does not accept negative numbers", async () => {
+    const user = userEvent.setup();
+    render(<NumberOfEvents updateEventCount={mockUpdateEventCount} />);
+    const inputElement = screen.getByRole("spinbutton", {
+      name: /number of events/i,
+    });
+
+    await act(async () => {
+      await user.clear(inputElement);
+      await user.type(inputElement, "0");
+    });
+
+    expect(inputElement).toHaveValue(0);
+    expect(mockUpdateEventCount).toHaveBeenCalledWith(0);
+  });
+
+  test("input does not accept non-numeric values", async () => {
+    const user = userEvent.setup();
+    render(<NumberOfEvents updateEventCount={mockUpdateEventCount} />);
+    const inputElement = screen.getByRole("spinbutton", {
+      name: /number of events/i,
+    });
+
+    await act(async () => {
+      await user.clear(inputElement);
+      await user.type(inputElement, "abc");
+    });
+
+    expect(inputElement).toHaveValue(0);
+    expect(mockUpdateEventCount).toHaveBeenCalledWith(0);
+  });
 });

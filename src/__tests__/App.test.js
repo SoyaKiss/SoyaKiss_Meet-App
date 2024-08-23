@@ -58,5 +58,3 @@ describe("<App /> integration", () => {
     });
   });
 });
-
-// This is a code to add for fun
