@@ -4,12 +4,19 @@ const NumberOfEvents = ({ updateEventCount }) => {
   const [eventCount, setEventCount] = useState(32);
 
   const handleInputChanged = (event) => {
-    let value = parseInt(event.target.value, 10);
-    if (isNaN(value) || value < 0) {
-      value = 0;
+    let value = event.target.value;
+
+    // Only update if the value is a number and greater than 0
+    if (value === "") {
+      setEventCount(""); // Allow the input to be empty
+      updateEventCount(0); // You might want to handle this differently if needed
+    } else {
+      let numericValue = parseInt(value, 10);
+      if (!isNaN(numericValue) && numericValue >= 0) {
+        setEventCount(numericValue);
+        updateEventCount(numericValue);
+      }
     }
-    setEventCount(value);
-    updateEventCount(value);
   };
 
   return (
@@ -20,6 +27,7 @@ const NumberOfEvents = ({ updateEventCount }) => {
         value={eventCount}
         onChange={handleInputChanged}
         aria-label="Number of events"
+        min="1"
       />
     </div>
   );
