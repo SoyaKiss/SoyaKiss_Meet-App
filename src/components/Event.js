@@ -3,7 +3,6 @@ import "../styles/Event.css";
 
 const Event = ({ event }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
   const handleToggleDetails = () => {
     setIsExpanded(!isExpanded);
   };
