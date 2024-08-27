@@ -100,6 +100,10 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .details-btn {
@@ -110,4 +114,44 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+}
+
+/* Media queries for super small screen sizes */
+@media screen and (max-width: 344px) {
+  .App {
+    padding: 2% 2%;
+  }
+
+  #city-search {
+    margin: 20px auto 0;
+    width: 80%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  .event {
+    width: 100%;
+    margin: 0 auto 20px auto;
+  }
+
+  .event h1,
+  .event p {
+    text-align: center;
+  }
+
+  .details-btn {
+    position: relative;
+    margin-top: 10px;
+    align-self: center;
+  }
+
+  .App-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
