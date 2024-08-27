@@ -21,7 +21,7 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     const value = event.target.textContent;
     setQuery(value);
     setShowSuggestions(false);
-    setCurrentCity(value); // Use the setCurrentCity function passed as a prop
+    setCurrentCity(value);
   };
 
   useEffect(() => {
