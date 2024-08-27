@@ -6,7 +6,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:s3": "node set-homepage-s3.js && npm run build",
     "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -62,5 +61,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://soyasmeetapp.s3-website-us-east-1.amazonaws.com"
+  "homepage": "https://soyakiss.github.io/meet_app"
 }
