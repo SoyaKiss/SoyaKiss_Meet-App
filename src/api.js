@@ -26,10 +26,13 @@ export const getEvents = async () => {
     const url = `https://rkvz72ff68.execute-api.us-east-1.amazonaws.com/dev/api/get-events/${token}`;
     const response = await fetch(url);
     const result = await response.json();
-    if (result) {
+    if (result && Array.isArray(result.events)) {
       return result.events;
-    } else return null;
+    } else {
+      return [];
+    }
   }
+  return [];
 };
 
 export const getAccessToken = async () => {

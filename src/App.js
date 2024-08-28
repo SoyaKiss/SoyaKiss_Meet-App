@@ -18,11 +18,24 @@ const App = () => {
 
   const fetchData = async () => {
     const allEvents = await getEvents();
+
+    if (!allEvents) {
+      console.error("No events found");
+      return;
+    }
+
     const filteredEvents =
       currentCity === "See all cities"
         ? allEvents
         : allEvents.filter((event) => event.location === currentCity);
-    setEvents(filteredEvents.slice(0, currentNOE));
+
+    if (Array.isArray(filteredEvents)) {
+      setEvents(filteredEvents.slice(0, currentNOE));
+    } else {
+      console.warn("Filtered events is not an array:", filteredEvents);
+      setEvents([]);
+    }
+
     setAllLocations(extractLocations(allEvents));
   };
 
