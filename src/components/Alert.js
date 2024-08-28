@@ -1,3 +1,4 @@
+import React from "react";
 import { Component } from "react";
 
 class Alert extends Component {
@@ -38,4 +39,20 @@ class InfoAlert extends Alert {
   }
 }
 
-export { InfoAlert };
+class ErrorAlert extends Alert {
+  constructor(props) {
+    super(props);
+    this.color = "red";
+    this.bgColor = "rgb(255, 200, 200)";
+  }
+}
+
+class ErrorTwoAlert extends Alert {
+  constructor(props) {
+    super(props);
+    this.color = "orange";
+    this.bgColor = "lightYellow";
+  }
+}
+
+export { InfoAlert, ErrorAlert, ErrorTwoAlert };

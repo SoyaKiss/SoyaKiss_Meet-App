@@ -125,6 +125,17 @@ input[type="number"] {
   text-align: center;
 }
 
+.error-alert-container {
+  position: relative;
+  margin: 10px 0 20px;
+  text-align: center;
+  width: 250px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* Media queries for super small screen sizes */
 @media screen and (max-width: 344px) {
   .App {
@@ -168,12 +179,20 @@ input[type="number"] {
     top: 40px;
     width: 80%;
   }
+  .error-alert-container {
+    top: 10px;
+    width: 80%;
+  }
 }
 
 /* Medium sized screens */
 @media screen and (min-width: 345px) and (max-width: 768px) {
   .alerts-container {
     top: 100px;
+    width: 60%;
+  }
+  .error-alert-container {
+    top: 20px;
     width: 60%;
   }
 }

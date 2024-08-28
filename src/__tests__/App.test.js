@@ -47,7 +47,6 @@ describe("<App /> integration", () => {
       (event) => event.location === "Berlin, Germany"
     );
 
-    // Assuming the default value for currentNOE is 32
     const currentNOE = 32;
 
     expect(allRenderedEventItems.length).toBe(

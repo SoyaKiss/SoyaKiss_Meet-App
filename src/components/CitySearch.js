@@ -1,30 +1,53 @@
 import React, { useState, useEffect } from "react";
-import { InfoAlert } from "./Alert";
+import { InfoAlert, ErrorAlert } from "./Alert";
 
-const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
+const CitySearch = ({
+  allLocations,
+  setCurrentCity,
+  setInfoAlert,
+  setErrorAlert,
+}) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
+    setQuery(value);
+
     const filteredLocations = allLocations
       ? allLocations.filter((location) =>
-          location.toUpperCase().includes(value.toUpperCase())
+          location.toUpperCase().startsWith(value.toUpperCase())
         )
       : [];
 
-    setQuery(value);
     setSuggestions(filteredLocations);
 
-    let infoText;
-    if (filteredLocations.length === 0) {
-      infoText =
-        "We can not find the city you are looking for. Please try another city";
+    if (value.length > 0 && filteredLocations.length === 0) {
+      if (
+        allLocations.some(
+          (location) => location.toUpperCase() === value.toUpperCase()
+        )
+      ) {
+        setInfoAlert("");
+        setErrorAlert(
+          `There are no events in "${value}". Please try another city.`
+        );
+      } else {
+        if (value.length > 2) {
+          setErrorAlert(`City "${value}" not found. Please try another city.`);
+          setInfoAlert("");
+        } else {
+          setInfoAlert(
+            "We cannot find the city you are looking for. Please try another city."
+          );
+          setErrorAlert("");
+        }
+      }
     } else {
-      infoText = "";
+      setInfoAlert("");
+      setErrorAlert("");
     }
-    setInfoAlert(infoText);
   };
 
   const handleItemClicked = (event) => {
@@ -33,6 +56,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     setShowSuggestions(false);
     setCurrentCity(value);
     setInfoAlert("");
+    setErrorAlert("");
   };
 
   useEffect(() => {

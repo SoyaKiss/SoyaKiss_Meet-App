@@ -50,12 +50,10 @@ export const getAccessToken = async () => {
       const result = await response.json();
       const { authUrl } = result;
 
-      // Make sure the redirect URI used here matches the one in Google Cloud Console
       const redirectUri = "https://soyakiss.github.io/meet_app/";
 
-      // Check if the authUrl already includes 'redirect_uri'
       if (authUrl.includes("redirect_uri")) {
-        window.location.href = authUrl; // No need to add redirect_uri again
+        window.location.href = authUrl;
       } else {
         window.location.href = `${authUrl}&redirect_uri=${encodeURIComponent(
           redirectUri

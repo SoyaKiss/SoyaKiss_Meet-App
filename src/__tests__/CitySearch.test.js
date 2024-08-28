@@ -7,15 +7,21 @@ import App from "../App";
 
 describe("<CitySearch /> component", () => {
   let CitySearchComponent;
+  const setCurrentCity = jest.fn();
+  const setInfoAlert = jest.fn();
+  const setErrorAlert = jest.fn();
+
   beforeEach(() => {
     CitySearchComponent = render(
       <CitySearch
         allLocations={[]}
-        setCurrentCity={jest.fn()}
-        setInfoAlert={() => {}}
+        setCurrentCity={setCurrentCity}
+        setInfoAlert={setInfoAlert}
+        setErrorAlert={setErrorAlert}
       />
     );
   });
+
   test("renders text input", () => {
     const cityTextBox = CitySearchComponent.queryByRole("textbox");
     expect(cityTextBox).toBeInTheDocument();
@@ -41,7 +47,12 @@ describe("<CitySearch /> component", () => {
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
     CitySearchComponent.rerender(
-      <CitySearch allLocations={allLocations} setInfoAlert={() => {}} />
+      <CitySearch
+        allLocations={allLocations}
+        setCurrentCity={setCurrentCity}
+        setInfoAlert={setInfoAlert}
+        setErrorAlert={setErrorAlert}
+      />
     );
 
     const cityTextBox = CitySearchComponent.queryByRole("textbox");
@@ -69,21 +80,24 @@ describe("<CitySearch /> component", () => {
     CitySearchComponent.rerender(
       <CitySearch
         allLocations={allLocations}
-        setCurrentCity={() => {}}
-        setInfoAlert={() => {}}
+        setCurrentCity={setCurrentCity}
+        setInfoAlert={setInfoAlert}
+        setErrorAlert={setErrorAlert}
       />
     );
 
     const cityTextBox = CitySearchComponent.queryByRole("textbox");
     await user.type(cityTextBox, "Berlin");
 
-    // the suggestion's textContent look like this: "Berlin, Germany"
     const BerlinGermanySuggestion =
       CitySearchComponent.queryAllByRole("listitem")[0];
 
     await user.click(BerlinGermanySuggestion);
 
     expect(cityTextBox).toHaveValue(BerlinGermanySuggestion.textContent);
+    expect(setCurrentCity).toHaveBeenCalledWith("Berlin, Germany");
+    expect(setInfoAlert).toHaveBeenCalledWith("");
+    expect(setErrorAlert).toHaveBeenCalledWith("");
   });
 
   describe("<CitySearch /> integration", () => {

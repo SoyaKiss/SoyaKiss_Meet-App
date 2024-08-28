@@ -4,7 +4,7 @@ import EventList from "./components/EventList";
 import NumberOfEvents from "./components/NumberOfEvents";
 import { extractLocations, getEvents } from "./api";
 import Header from "./components/Header";
-import { InfoAlert } from "./components/Alert";
+import { InfoAlert, ErrorAlert, ErrorTwoAlert } from "./components/Alert";
 import "./styles/App.css";
 
 const App = () => {
@@ -13,32 +13,39 @@ const App = () => {
   const [allLocations, setAllLocations] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
+  const [errorAlert, setErrorAlert] = useState("");
+  const [errorTwoAlert, setErrorTwoAlert] = useState("");
 
   useEffect(() => {
     fetchData();
   }, [currentCity, currentNOE]);
 
   const fetchData = async () => {
-    const allEvents = await getEvents();
+    try {
+      const allEvents = await getEvents();
 
-    if (!allEvents) {
-      console.error("No events found");
-      return;
+      if (!allEvents) {
+        console.error("No events found");
+        return;
+      }
+
+      const filteredEvents =
+        currentCity === "See all cities"
+          ? allEvents
+          : allEvents.filter((event) => event.location === currentCity);
+
+      if (Array.isArray(filteredEvents)) {
+        setEvents(filteredEvents.slice(0, currentNOE));
+      } else {
+        console.warn("Filtered events is not an array:", filteredEvents);
+        setEvents([]);
+      }
+
+      setAllLocations(extractLocations(allEvents));
+    } catch (error) {
+      setErrorAlert("An error occurred while fetching events");
+      console.error(error);
     }
-
-    const filteredEvents =
-      currentCity === "See all cities"
-        ? allEvents
-        : allEvents.filter((event) => event.location === currentCity);
-
-    if (Array.isArray(filteredEvents)) {
-      setEvents(filteredEvents.slice(0, currentNOE));
-    } else {
-      console.warn("Filtered events is not an array:", filteredEvents);
-      setEvents([]);
-    }
-
-    setAllLocations(extractLocations(allEvents));
   };
 
   return (
@@ -51,8 +58,16 @@ const App = () => {
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}
         setInfoAlert={setInfoAlert}
+        setErrorAlert={setErrorAlert}
       />
-      <NumberOfEvents updateEventCount={setCurrentNOE} />
+      <NumberOfEvents
+        updateEventCount={setCurrentNOE}
+        setErrorTwoAlert={setErrorTwoAlert}
+      />
+      <div className="error-alert-container">
+        {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {errorTwoAlert.length ? <ErrorTwoAlert text={errorTwoAlert} /> : null}
+      </div>
       <EventList events={events} />
     </div>
   );

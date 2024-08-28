@@ -6,7 +6,7 @@ const Event = ({ event }) => {
   const detailsRef = useRef(null);
 
   const handleToggleDetails = (event) => {
-    event.stopPropagation(); // Prevent the click from reaching the document
+    event.stopPropagation();
     setIsExpanded(!isExpanded);
   };
 
