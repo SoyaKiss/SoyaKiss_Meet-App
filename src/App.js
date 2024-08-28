@@ -4,6 +4,7 @@ import EventList from "./components/EventList";
 import NumberOfEvents from "./components/NumberOfEvents";
 import { extractLocations, getEvents } from "./api";
 import Header from "./components/Header";
+import { InfoAlert } from "./components/Alert";
 import "./styles/App.css";
 
 const App = () => {
@@ -11,10 +12,11 @@ const App = () => {
   const [currentNOE, setCurrentNOE] = useState(32);
   const [allLocations, setAllLocations] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
+  const [infoAlert, setInfoAlert] = useState("");
 
   useEffect(() => {
     fetchData();
-  }, [currentCity, currentNOE]); // <--- Two dependencies
+  }, [currentCity, currentNOE]);
 
   const fetchData = async () => {
     const allEvents = await getEvents();
@@ -41,8 +43,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header /> {/* Add the Header component here */}
-      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
+      <Header />
+      <div className="alerts-container">
+        {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
+      </div>
+      <CitySearch
+        allLocations={allLocations}
+        setCurrentCity={setCurrentCity}
+        setInfoAlert={setInfoAlert}
+      />
       <NumberOfEvents updateEventCount={setCurrentNOE} />
       <EventList events={events} />
     </div>

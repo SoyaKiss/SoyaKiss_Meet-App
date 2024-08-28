@@ -64,6 +64,26 @@ describe("<NumberOfEvents /> component", () => {
       await user.type(inputElement, "abc");
     });
 
+    expect(inputElement.value).toBe("");
+  });
+
+  test("allows user to clear input, sets to 0 on blur if empty", async () => {
+    const user = userEvent.setup();
+    render(<NumberOfEvents updateEventCount={mockUpdateEventCount} />);
+    const inputElement = screen.getByRole("spinbutton", {
+      name: /number of events/i,
+    });
+
+    await act(async () => {
+      await user.clear(inputElement);
+    });
+
+    expect(inputElement.value).toBe("");
+
+    await act(async () => {
+      await user.click(document.body);
+    });
+
     expect(inputElement).toHaveValue(0);
     expect(mockUpdateEventCount).toHaveBeenCalledWith(0);
   });

@@ -116,6 +116,15 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.alerts-container {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  text-align: center;
+}
+
 /* Media queries for super small screen sizes */
 @media screen and (max-width: 344px) {
   .App {
@@ -154,5 +163,17 @@ input[type="number"] {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+  .alerts-container {
+    top: 40px;
+    width: 80%;
+  }
+}
+
+/* Medium sized screens */
+@media screen and (min-width: 345px) and (max-width: 768px) {
+  .alerts-container {
+    top: 100px;
+    width: 60%;
   }
 }

@@ -6,16 +6,21 @@ const NumberOfEvents = ({ updateEventCount }) => {
   const handleInputChanged = (event) => {
     let value = event.target.value;
 
-    // Only update if the value is a number and greater than 0
-    if (value === "") {
-      setEventCount(""); // Allow the input to be empty
-      updateEventCount(0); // You might want to handle this differently if needed
+    if (value === "" || isNaN(value)) {
+      setEventCount("");
     } else {
-      let numericValue = parseInt(value, 10);
-      if (!isNaN(numericValue) && numericValue >= 0) {
+      const numericValue = parseInt(value, 10);
+      if (numericValue >= 0) {
         setEventCount(numericValue);
         updateEventCount(numericValue);
       }
+    }
+  };
+
+  const handleInputBlur = () => {
+    if (eventCount === "") {
+      setEventCount(0);
+      updateEventCount(0);
     }
   };
 
@@ -24,8 +29,9 @@ const NumberOfEvents = ({ updateEventCount }) => {
       <input
         type="number"
         className="event-number"
-        value={eventCount}
+        value={eventCount !== null ? eventCount : ""}
         onChange={handleInputChanged}
+        onBlur={handleInputBlur}
         aria-label="Number of events"
         min="1"
       />

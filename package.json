@@ -25,6 +25,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-react": "^7.24.7",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.4.8",
     "gh-pages": "^6.1.1",
     "jest-cucumber": "^4.5.0",
