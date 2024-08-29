@@ -12,6 +12,7 @@ import {
 } from "./components/Alert";
 import "./styles/App.css";
 import CityEventsCharts from "./components/CityEventsChart";
+import EventGenresChart from "./components/EventGenresChart";
 
 const App = () => {
   const [events, setEvents] = useState([]);
@@ -87,7 +88,10 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {errorTwoAlert.length ? <ErrorTwoAlert text={errorTwoAlert} /> : null}
       </div>
-      <CityEventsCharts allLocations={allLocations} events={events} />
+      <div className="charts-container">
+        <EventGenresChart events={events} />
+        <CityEventsCharts allLocations={allLocations} events={events} />
+      </div>
       <EventList events={events} />
     </div>
   );

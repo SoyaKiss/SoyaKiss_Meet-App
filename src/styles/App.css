@@ -136,6 +136,12 @@ input[type="number"] {
   transform: translateX(-50%);
 }
 
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 /* Media queries for super small screen sizes */
 @media screen and (max-width: 344px) {
   .App {
@@ -194,5 +200,8 @@ input[type="number"] {
   .error-alert-container {
     top: 20px;
     width: 60%;
+  }
+  .charts-container {
+    grid-template-columns: 1fr;
   }
 }
