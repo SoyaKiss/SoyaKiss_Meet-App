@@ -34,7 +34,7 @@ export const getEvents = async () => {
     const result = await response.json();
     if (result && Array.isArray(result.events)) {
       NProgress.done();
-      localStorage.setItems("lastEvents", JSON.stringify(result.events));
+      localStorage.setItem("lastEvents", JSON.stringify(result.events));
       return result.events;
     } else {
       return [];
