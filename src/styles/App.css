@@ -192,7 +192,7 @@ input[type="number"] {
 }
 
 /* Medium sized screens */
-@media screen and (min-width: 345px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .alerts-container {
     top: 100px;
     width: 60%;
@@ -203,5 +203,10 @@ input[type="number"] {
   }
   .charts-container {
     grid-template-columns: 1fr;
+  }
+  .charts-container .recharts-wrapper {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0 auto;
   }
 }

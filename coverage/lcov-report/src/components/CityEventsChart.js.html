@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,7 +121,15 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,24 +142,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">47x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">47x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">98x</span>
+<span class="cline-any cline-yes">2772x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98x</span>
+<span class="cline-any cline-yes">98x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -196,15 +212,15 @@ const CityEventsChart = ({ allLocations, events }) =&gt; {
 &nbsp;
   useEffect(() =&gt; {
     setData(getData());
-  }, [`${data}`]);
+  }, [allLocations, events]);
 &nbsp;
   const getData = () =&gt; {
-    const data = allLocations.map(<span class="fstat-no" title="function not covered" >(l</span>ocation) =&gt; {
-      const count = <span class="cstat-no" title="statement not covered" >events.filter(</span>
-<span class="fstat-no" title="function not covered" >        (e</span>vent) =&gt; <span class="cstat-no" title="statement not covered" >event.location === location</span>
+    const data = allLocations.map((location) =&gt; {
+      const count = events.filter(
+        (event) =&gt; event.location === location
       ).length;
-      const city = <span class="cstat-no" title="statement not covered" >location.split(/, | - /)[0];</span>
-<span class="cstat-no" title="statement not covered" >      return { city, count };</span>
+      const city = location.split(/, | - /)[0];
+      return { city, count };
     });
     return data;
   };
@@ -219,18 +235,26 @@ const CityEventsChart = ({ allLocations, events }) =&gt; {
           left: 0,
         }}
       &gt;
-        &lt;CartesianGrid /&gt;
+        &lt;CartesianGrid stroke="#9dece2" /&gt;
         &lt;XAxis
           type="category"
           dataKey="city"
           name="City"
           angle={60}
           interval={0}
+          fontWeight="bold"
+          stroke="#264653"
           tick={{ dx: 20, dy: 40, fontSize: 14 }}
         /&gt;
-        &lt;YAxis type="number" dataKey="count" name="Number of events" /&gt;
+        &lt;YAxis
+          type="number"
+          dataKey="count"
+          name="Number of events"
+          fontWeight="bold"
+          stroke="#264653"
+        /&gt;
         &lt;Tooltip cursor={{ strokeDasharray: "3 3" }} /&gt;
-        &lt;Scatter name="A school" data={data} fill="#8884d8" /&gt;
+        &lt;Scatter name="A school" data={data} fill="#f3a261" /&gt;
       &lt;/ScatterChart&gt;
     &lt;/ResponsiveContainer&gt;
   );
@@ -244,7 +268,7 @@ export default CityEventsChart;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-29T14:57:27.421Z
+                at 2024-08-29T16:27:44.240Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

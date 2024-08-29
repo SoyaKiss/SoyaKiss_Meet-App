@@ -27,7 +27,6 @@ const App = () => {
   useEffect(() => {
     const onlineStatus =
       typeof navigator.onLine === "boolean" ? navigator.onLine : true;
-    console.log("Navigator online status:", onlineStatus);
 
     if (onlineStatus) {
       setWarningAlert("");
