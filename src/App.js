@@ -23,7 +23,11 @@ const App = () => {
   const [warningAlert, setWarningAlert] = useState("");
 
   useEffect(() => {
-    if (navigator.online) {
+    const onlineStatus =
+      typeof navigator.onLine === "boolean" ? navigator.onLine : true;
+    console.log("Navigator online status:", onlineStatus);
+
+    if (onlineStatus) {
       setWarningAlert("");
     } else {
       setWarningAlert(
