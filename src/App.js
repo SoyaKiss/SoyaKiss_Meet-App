@@ -11,6 +11,7 @@ import {
   WarningAlert,
 } from "./components/Alert";
 import "./styles/App.css";
+import CityEventsCharts from "./components/CityEventsChart";
 
 const App = () => {
   const [events, setEvents] = useState([]);
@@ -86,6 +87,7 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {errorTwoAlert.length ? <ErrorTwoAlert text={errorTwoAlert} /> : null}
       </div>
+      <CityEventsCharts allLocations={allLocations} events={events} />
       <EventList events={events} />
     </div>
   );
