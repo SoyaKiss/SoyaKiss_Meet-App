@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.66% </span>
+                <span class="strong">78.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/30</span>
+                <span class='fraction'>25/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">61.11% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/16</span>
+                <span class='fraction'>11/18</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.66% </span>
+                <span class="strong">78.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/30</span>
+                <span class='fraction'>25/32</span>
             </div>
         
             
@@ -153,7 +153,14 @@
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,27 +175,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">53x</span>
-<span class="cline-any cline-yes">49x</span>
-<span class="cline-any cline-yes">49x</span>
-<span class="cline-any cline-yes">49x</span>
-<span class="cline-any cline-yes">49x</span>
-<span class="cline-any cline-yes">49x</span>
-<span class="cline-any cline-yes">49x</span>
-<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,7 +227,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -256,6 +268,7 @@ import {
   WarningAlert,
 } from "./components/Alert";
 import "./styles/App.css";
+import CityEventsCharts from "./components/CityEventsChart";
 &nbsp;
 const App = () =&gt; {
   const [events, setEvents] = useState([]);
@@ -268,10 +281,14 @@ const App = () =&gt; {
   const [warningAlert, setWarningAlert] = useState("");
 &nbsp;
   useEffect(() =&gt; {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (navigator.online) {
-<span class="cstat-no" title="statement not covered" >      setWarningAlert("");</span>
-    } else {
-      setWarningAlert(
+    const onlineStatus =
+      typeof navigator.onLine === "boolean" ? navigator.onLine : <span class="branch-1 cbranch-no" title="branch not covered" >true;</span>
+    console.log("Navigator online status:", onlineStatus);
+&nbsp;
+    if (onlineStatus) {
+      setWarningAlert("");
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >      setWarningAlert(</span>
         "You are offline. The displayed list has been loaded from cache."
       );
     }
@@ -311,7 +328,7 @@ const App = () =&gt; {
       &lt;Header /&gt;
       &lt;div className="alerts-container"&gt;
         {infoAlert.length ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;InfoAlert text={infoAlert} /&gt; </span>: null}
-        {warningAlert.length ? &lt;WarningAlert text={warningAlert} /&gt; : null}
+        {warningAlert.length ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;WarningAlert text={warningAlert} /&gt; </span>: null}
       &lt;/div&gt;
       &lt;CitySearch
         allLocations={allLocations}
@@ -327,6 +344,7 @@ const App = () =&gt; {
         {errorAlert.length ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;ErrorAlert text={errorAlert} /&gt; </span>: null}
         {errorTwoAlert.length ? &lt;ErrorTwoAlert text={errorTwoAlert} /&gt; : null}
       &lt;/div&gt;
+      &lt;CityEventsCharts allLocations={allLocations} events={events} /&gt;
       &lt;EventList events={events} /&gt;
     &lt;/div&gt;
   );
@@ -340,7 +358,7 @@ export default App;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-29T12:12:41.720Z
+                at 2024-08-29T14:50:59.679Z
             </div>
         <script src="../prettify.js"></script>
         <script>
